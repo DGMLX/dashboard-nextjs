@@ -7,6 +7,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 
 import Image from "next/image";
+import Link from 'next/link';
 
 const NavLinks = [
     {href:"/dashboard",nombre:"Dashboard",icon:<SpaceDashboardIcon className='w-10 h-10'/>},
@@ -34,15 +35,17 @@ const Sidebar = () =>{
                 {
                     NavLinks.map(link=>{
                         return(
-                            <div className="p-4 m-2 border-2 border-blue-300 rounded-xl flex items-center hover:bg-indigo-700 hover:border-white" key={link.href}>
-                                <div className="text-white mr-4 ">
-                                    {link.icon}
+                            <Link href={link.href} key={link.href}>
+                                <div className="p-4 m-2 border-2 border-blue-300 rounded-xl flex items-center hover:bg-indigo-700 hover:border-white" >
+                                    <div className="text-white mr-4 ">
+                                        {link.icon}
+                                    </div>
+                                    <div>
+                                        <p className="text-white text-xl">{link.nombre}</p>
+                                        <p className="text-white text-sm">{link.href}</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p className="text-white text-xl">{link.nombre}</p>
-                                    <p className="text-white text-sm">{link.href}</p>
-                                </div>
-                            </div>
+                            </Link>
                         )    
                     })
                 }
