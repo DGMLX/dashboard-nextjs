@@ -1,8 +1,9 @@
 
-
 const ProductosPage = () =>{
+    
     return(
-        <h1>Productos page</h1>
+        <h1 className="text-4xl">Productos disponibles</h1>
+        
     )
 }
 
